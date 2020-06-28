@@ -1,136 +1,422 @@
-<div id="ppms_consent_container">
+<html>
+<head>
+	<link rel="stylesheet" href='style.css' crossorigin="anonymous" />
+</head>
+<body>
+<script type="text/javascript">
+	(function(window, document, dataLayerName, id) {
+		window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+		function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}
+		var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+		var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+		tags.async=!0,tags.src="//bang-olufsen.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+		!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+	})(window, document, 'dataLayer', 'aed3b488-cf61-4b0d-b0fe-3f9c2d2fc621');
+</script><noscript><iframe src="//bang-olufsen.containers.piwik.pro/aed3b488-cf61-4b0d-b0fe-3f9c2d2fc621/noscript.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<p>Lorem impsum</p>
+<button id="ppms_consent_link">Privacy settings</button>
+<div id="ppms_consent-fields1">
+	<div id="ppms_consent_container">
 
-	<div id="ppms_consent_error">
+		<div id="ppms_consent_error">
+			<div class="ppms_container">
+				<h3>Connection problem!</h3>
+				<p>Your consent choices weren’t processed. Please refresh page.</p>
+				<button class="ppms_btn ppms_dark-claret ppms_left" id="ppms_refresh_page">Refresh page</button>
+			</div>
+		</div>
+
 		<div class="ppms_container">
-			<h3>Connection problem!</h3>
-			<p>Your consent choices weren’t processed. Please refresh page.</p>
-			<button class="ppms_btn ppms_dark-claret ppms_left" id="ppms_refresh_page">Refresh page</button>
-		</div>
-	</div>
 
-	<div class="ppms_container">
-
-		<div class="ppms_turbobox">
-			<div class="ppms_tx-9">
-				<div class="ppms_content">
-					<div class="ppms_sided">
-						<div class="ppms_images">
-							<i class="ppms_content_icon"></i>
-						</div>
-						<h3>Get the full experience</h3>
-						<p>Click to agree and allow us to improve and personalize your experience on our website. You can change your mind at anytime.</p>
-						<div id="ppms_consent_fields_name_list">
-							<ul>
-								<li data-key="analytics">Analytics</li>
-								<li data-key="ab_testing_and_personalization">A/B Testing</li>
-								<li data-key="conversion_tracking">Conversion Tracking</li>
-								<li data-key="marketing_automation">Marketing Automation</li>
-								<li data-key="remarketing">Remarketing</li>
-								<li data-key="user_feedback">User Feedback</li>
-								<li data-key="custom_consent">Custom consent</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="ppms_tx-3">
-				<div class="ppms_content">
-					<button class="ppms_btn ppms_wide" id="ppms_agree_all">Agree to all data uses</button>
-					<button class="ppms_btn ppms_wide" id="ppms_reject_all">Reject all data uses</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="ppms_turbobox">
-			<div class="ppms_tx-12">
-
-				<div class="ppms_content">
-					<p><a id="ppms_show_detailed">Make individual choices</a><a class="ppms_hide" id="ppms_hide_detailed">Hide individual settings</a> | <a class="ppms_hide_message" id="ppms_hide_message">Hide this message</a> | <a class="privacy_link" href="/privacy-policy/" target="_blank">Learn more on our privacy policy page.</a></p>
-				</div>
-
-				<div id="ppms_detailed_settings" class="ppms_hide">
-					<div id="ppms_consent-fields">
-
-						<!-- analytics -->
-						<div class="ppms_consent_item" data-key="analytics">
-							<div>
-								<div class="ppms_consent_switcher"></div>
+			<div class="ppms_turbobox">
+				<div class="ppms_tx-9">
+					<div class="ppms_content">
+						<div class="ppms_sided">
+							<div class="ppms_images">
+								<i class="ppms_content_icon"></i>
 							</div>
-							<div class="ppms_consent_item_desc">
-								<h4>Analytics</h4>
-								<p>We will collect aggregated data about visitors and their experiences on our website. We use this data to fix bugs and make our website better for everyone.</p>
-							</div>
-						</div>
-
-						<!-- ab_testing_and_personalization -->
-						<div class="ppms_consent_item" data-key="ab_testing_and_personalization">
-							<div><div class="ppms_consent_switcher"></div></div>
-							<div class="ppms_consent_item_desc">
-								<h4>A/B Testing</h4>
-								<p>We will set a cookie in your browser to ensure consistency of A/B tests. We use A/B tests, small changes shown to different visitor groups, to make our website better. The same cookie is used to show content relevant to each visitor.</p>
-							</div>
-						</div>
-
-						<!-- conversion_tracking -->
-						<div class="ppms_consent_item" data-key="conversion_tracking">
-							<div><div class="ppms_consent_switcher"></div></div>
-							<div class="ppms_consent_item_desc">
-								<h4>Conversion Tracking</h4>
-								<p>We will store data about when you complete certain actions on our website to understand better how you use it. We use this data to improve your experience with our site.</p>
-							</div>
-						</div>
-
-						<!-- marketing_automation -->
-						<div class="ppms_consent_item" data-key="marketing_automation">
-							<div><div class="ppms_consent_switcher"></div></div>
-							<div class="ppms_consent_item_desc">
-								<h4>Marketing Automation</h4>
-								<p>We will store data to create marketing campaigns for certain groups of visitors.</p>
-							</div>
-						</div>
-
-						<!-- remarketing -->
-						<div class="ppms_consent_item" data-key="remarketing">
-							<div><div class="ppms_consent_switcher"></div></div>
-							<div class="ppms_consent_item_desc">
-								<h4>Remarketing</h4>
-								<p>We will set a cookie in your browser to show our advertisements, and only ours, on other websites.</p>
-							</div>
-						</div>
-
-						<!-- user_feedback -->
-						<div class="ppms_consent_item" data-key="user_feedback">
-							<div><div class="ppms_consent_switcher"></div></div>
-							<div class="ppms_consent_item_desc">
-								<h4>User Feedback</h4>
-								<p>We will store data in an aggregated form to analyze the performance of our website’s user interface. We use this data to improve the site for all visitors.</p>
-							</div>
-						</div>
-
-						<!-- custom_consent -->
-						<div class="ppms_consent_item" data-key="custom_consent">
-							<div><div class="ppms_consent_switcher"></div></div>
-							<div class="ppms_consent_item_desc">
-								<h4>Custom consent</h4>
-								<p>Adjust this copy to your needs.</p>
+							<h3>Get the full experience</h3>
+							<p>Click to agree and allow us to improve and personalize your experience on our website. You can change your mind at anytime.</p>
+							<div id="ppms_consent_fields_name_list">
+								<ul>
+									<li data-key="analytics">Analytics</li>
+									<li data-key="ab_testing_and_personalization">A/B Testing</li>
+									<li data-key="conversion_tracking">Conversion Tracking</li>
+									<li data-key="marketing_automation">Marketing Automation</li>
+									<li data-key="remarketing">Remarketing</li>
+									<li data-key="user_feedback">User Feedback</li>
+									<li data-key="custom_consent">Custom consent</li>
+								</ul>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="ppms_tx-3">
+					<div class="ppms_content">
+						<button class="ppms_btn ppms_wide" id="ppms_agree_all">Agree to all data uses</button>
+						<button class="ppms_btn ppms_wide" id="ppms_reject_all">Reject all data uses</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="ppms_turbobox">
+				<div class="ppms_tx-12">
 
 					<div class="ppms_content">
-						<button class="ppms_btn ppms_btn-sm ppms_pale-metal-gray ppms_left" id="ppms_save_choices">Save selections</button>
-						<p>Privacy cookie expiration period: 12 months</p>
+						<p><a id="ppms_show_detailed">Make individual choices</a><a class="ppms_hide" id="ppms_hide_detailed">Hide individual settings</a> | <a class="ppms_hide_message" id="ppms_hide_message">Hide this message</a> | <a class="privacy_link" href="/privacy-policy/" target="_blank">Learn more on our privacy policy page.</a></p>
 					</div>
+
+					<div id="ppms_detailed_settings" class="ppms_hide">
+						<div id="ppms_consent-fields">
+
+							<!-- analytics -->
+							<div class="ppms_consent_item" data-key="analytics">
+								<div>
+									<div class="ppms_consent_switcher"></div>
+								</div>
+								<div class="ppms_consent_item_desc">
+									<h4>Analytics</h4>
+									<p>We will collect aggregated data about visitors and their experiences on our website. We use this data to fix bugs and make our website better for everyone.</p>
+								</div>
+							</div>
+
+							<!-- ab_testing_and_personalization -->
+							<div class="ppms_consent_item" data-key="ab_testing_and_personalization">
+								<div><div class="ppms_consent_switcher"></div></div>
+								<div class="ppms_consent_item_desc">
+									<h4>A/B Testing</h4>
+									<p>We will set a cookie in your browser to ensure consistency of A/B tests. We use A/B tests, small changes shown to different visitor groups, to make our website better. The same cookie is used to show content relevant to each visitor.</p>
+								</div>
+							</div>
+
+							<!-- conversion_tracking -->
+							<div class="ppms_consent_item" data-key="conversion_tracking">
+								<div><div class="ppms_consent_switcher"></div></div>
+								<div class="ppms_consent_item_desc">
+									<h4>Conversion Tracking</h4>
+									<p>We will store data about when you complete certain actions on our website to understand better how you use it. We use this data to improve your experience with our site.</p>
+								</div>
+							</div>
+
+							<!-- marketing_automation -->
+							<div class="ppms_consent_item" data-key="marketing_automation">
+								<div><div class="ppms_consent_switcher"></div></div>
+								<div class="ppms_consent_item_desc">
+									<h4>Marketing Automation</h4>
+									<p>We will store data to create marketing campaigns for certain groups of visitors.</p>
+								</div>
+							</div>
+
+							<!-- remarketing -->
+							<div class="ppms_consent_item" data-key="remarketing">
+								<div><div class="ppms_consent_switcher"></div></div>
+								<div class="ppms_consent_item_desc">
+									<h4>Remarketing</h4>
+									<p>We will set a cookie in your browser to show our advertisements, and only ours, on other websites.</p>
+								</div>
+							</div>
+
+							<!-- user_feedback -->
+							<div class="ppms_consent_item" data-key="user_feedback">
+								<div><div class="ppms_consent_switcher"></div></div>
+								<div class="ppms_consent_item_desc">
+									<h4>User Feedback</h4>
+									<p>We will store data in an aggregated form to analyze the performance of our website’s user interface. We use this data to improve the site for all visitors.</p>
+								</div>
+							</div>
+
+							<!-- custom_consent -->
+							<div class="ppms_consent_item" data-key="custom_consent">
+								<div><div class="ppms_consent_switcher"></div></div>
+								<div class="ppms_consent_item_desc">
+									<h4>Custom consent</h4>
+									<p>Adjust this copy to your needs.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="ppms_content">
+							<button class="ppms_btn ppms_btn-sm ppms_pale-metal-gray ppms_left" id="ppms_save_choices">Save selections</button>
+							<p>Privacy cookie expiration period: 12 months</p>
+						</div>
+					</div>
+
 				</div>
-
 			</div>
-		</div>
 
-		<div class="ppms_footer">
-			<div class="ppms_content ppms_right">
-				<p>Powered by <a href="https://piwik.pro/gdpr-consent-manager/?utm_source=App&amp;utm_medium=Consent_Pop_Up&amp;utm_campaign=Consent_Manager_Pop_Up" target="_blank" rel="nofollow"><i></i></a></p>
+			<div class="ppms_footer">
+				<div class="ppms_content ppms_right">
+					<p>Powered by <a href="https://piwik.pro/gdpr-consent-manager/?utm_source=App&amp;utm_medium=Consent_Pop_Up&amp;utm_campaign=Consent_Manager_Pop_Up" target="_blank" rel="nofollow"><i></i></a></p>
+				</div>
 			</div>
-		</div>
 
+		</div>
 	</div>
 </div>
+<script src="script.js" crossorigin="anonymous"></script>
+
+<style id="c_modal_styles" type="text/css">
+	.c_modal {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #ffffff;
+		z-index: 1000;
+		box-sizing: border-box;
+		padding: 0;
+		width: 90%;
+		max-width: 880px;
+		max-height: 85%;
+		overflow: auto;
+	}
+
+	#c_modal_overlay {
+		position:fixed;
+		top:0;
+		left:0;
+		background:rgba(0,0,0,0.6);
+		z-index:999;
+		width:100%;
+		height:100%;
+	}
+
+	.c_modal-content {
+		padding: 40px 40px 0;
+	}
+
+	.c_modal-buttons {
+		padding: 30px 40px 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.c_modal-content h3 {
+		font-size: 30px;
+		color: #000000;
+		line-height: 1;
+		margin: 0 0 32px;
+		letter-spacing: 0.4px;
+		font-weight: normal;
+	}
+
+	.c_modal-content p {
+		font-size: 16px;
+		color: #737373;
+	}
+
+	.c_modal-cta .c_modal-primaryCTA {
+		color: #000000;
+		text-decoration: none;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 500;
+	}
+
+	.c_modal-cta .c_modal-primaryCTA span {
+		display: inline-block;
+		vertical-align: middle;
+		min-width: 31px;
+		max-height: 10px;
+		font-size: 0;
+		text-align: right;
+	}
+
+	.c_modal-cta .c_modal-primaryCTA span:before {
+		content: ' ';
+		width: 17px;
+		height: 2px;
+		display: inline-block;
+		background: #000000;
+		vertical-align: middle;
+		transition: width 400ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+	}
+
+	.c_modal-cta .c_modal-primaryCTA img {
+		display: inline-block;
+		max-width: 9px;
+		height: 10px;
+		vertical-align: middle;
+		margin-left: -6px;
+	}
+
+	.c_modal-cta .c_modal-primaryCTA:hover span:before {
+		width: 26px;
+	}
+
+	#c_modal-backdrop {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.3);
+		z-index: 199;
+		opacity: 0.7;
+	}
+
+	.ppms_consent-fields {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: space-evenly;
+		background-color: grey;
+	}
+
+	.c_modal-content td {
+		padding: 2px;
+	}
+
+	.consent-type {
+		flex-grow: 1;
+		text-align: center;
+		padding: 15px;
+	}
+	.consent-type label {
+		display: block;
+		padding-bottom: 5px;
+	}
+
+	.ppms-cta-button {
+		display: inline-block;
+		font-size: 0.875rem;
+		min-width: 240px;
+		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 1.8px;
+		line-height: 1.15;
+		cursor: pointer;
+		color: rgb(0, 0, 0);
+		padding: 10px 20px;
+		text-decoration: none;
+		border-width: 2px;
+		border-style: solid;
+		border-color: #000;
+		border-image: initial;
+		background-color: transparent;
+		transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+	}
+
+	.ppms-cta-button.-green {
+		background-color: green;
+		color: #fff;
+		border-color: transparent;
+	}
+</style>
+<div id="c_modal_overlay"></div>
+<div id="c_modal-message" class="c_modal c_modal-medium">
+	<div class="c_modal-content">
+		<h3 id="c-modal-title">Important information!</h3>
+		<p id="c-modal-p1">Due to the current global situation of COVID-19 all returned B&O products will be put in a quarantine for 14 days as a precaution.</p>
+		<p id="c-modal-p2">Therefore extended process time should be expected. We apologise for the inconvenience this might cause.</p>
+	</div>
+	<div class="c_modal-buttons">
+		<button class="ppms-cta-button -green" id="agree-to-all">Agree to all</button>
+		<button class="ppms-cta-button" id="reject-all">Reject all</button>
+	</div>
+	<div class="c_modal-content">
+		<a href="">Show details</a>
+		<table>
+			<tr><td class="details-collapser">^</td><td class="consent-types-names">Analytics</td><td class="consent-description">We will collect aggregated data about visitors and their experiences on our website. We use this data to fix bugs and make our website better for everyone.</td></tr>
+			<tr><td class="details-collapser">^</td><td class="consent-types-names">A/B testing</td><td class="consent-description">We will set a cookie in your browser to ensure consistency of A/B tests. We use A/B tests, small changes shown to different visitor groups, to make our website better. The same cookie is used to show content relevant to each visitor.</td></tr>
+			<tr><td class="details-collapser">^</td><td class="consent-types-names">Conversion Tracking</td><td class="consent-description">We will store data about when you complete certain actions on our website to understand better how you use it. We use this data to improve your experience with our site.</td></tr>
+			<tr><td class="details-collapser">^</td><td class="consent-types-names">Marketing Automation</td><td class="consent-description">We will store data to create marketing campaigns for certain groups of visitors.</td></tr>
+			<tr><td class="details-collapser">^</td><td class="consent-types-names">Remarketing</td><td class="consent-description">We will set a cookie in your browser to show our advertisements, and only ours, on other websites.</td></tr>
+		</table>
+	</div>
+	<div class="ppms_consent-fields">
+		<div class="consent-type">
+			<label for="analytics">Analytics</label>
+			<input type="checkbox" name="analytics" id="analytics" />
+		</div>
+		<div class="consent-type">
+			<label for="ab_testing_and_personalization">A/B Testing</label>
+			<input type="checkbox" name="ab_testing_and_personalization" id="ab_testing_and_personalization" />
+		</div>
+		<div class="consent-type">
+			<label for="conversion_tracking">Conversion tracking</label>
+			<input type="checkbox" name="conversion_tracking" id="conversion_tracking" />
+		</div>
+		<div class="consent-type">
+			<label for="marketing_automation">Marketing Automation</label>
+			<input type="checkbox" name="marketing_automation" id="marketing_automation" />
+		</div>
+		<div class="consent-type">
+			<label for="remarketing">Remarketing</label>
+			<input type="checkbox" name="remarketing" id="remarketing" />
+		</div>
+	</div>
+</div>
+<div id="c_modal-backdrop" style="display: none;"></div>
+<script type="application/javascript">
+	var locale = 'en';
+	var title = 'Important information';
+	var p1 = 'Due to the current global situation of COVID-19 all returned B&O products could be put in a quarantine for 14 days as a precaution.';
+	var p2 = 'Therefore extended process time should be expected. We apologise for the inconvenience this might cause.';
+	switch (locale) {
+		case 'da':
+			title = 'Vigtig information';
+			p1 = 'På grund af den nuværende globale situation med COVID-19 vil alle returnerede B&O-produkter blive sat i karantæne i 14 dage som en sikkerhedsforanstaltning.';
+			p2 = 'Vi forventer derfor, at ekspeditionstiden indtil videre vil være længere end normalt. Vi undskylder for det besvær, dette måtte medføre.';
+			break;
+		case 'it':
+			title = 'Attenzione';
+			p1 = 'A causa dell’attuale situazione globale in relazione al COVID-19, tutti i prodotti B&O resi potrebbero essere soggetti a una quarantena precauzionale di 14 giorni.';
+			p2 = 'Pertanto, i tempi di elaborazione saranno più lunghi. Ci scusiamo per qualsiasi disagio procuratovi.';
+			break;
+		case 'fr':
+			title = 'Information important';
+			p1 = 'En raison de la situation mondiale actuelle causée par le virus COVID-19, tous les produits B&O faisant l’objet d’un retour peuvent subir une quarantaine de 14 jours par mesure de précaution.';
+			p2 = 'Le délai de traitement des retours en sera donc allongé. Nous vous prions de nous excuser pour les désagréments occasionnés.';
+			break;
+		case 'es':
+			title = 'Información importante';
+			p1 = 'Debido a la situación actual mundial con el COVID-19, todos los productos devueltos de B&O podrán someterse en cuarentena durante 14 días como medida de precaución.';
+			p2 = 'Por lo tanto, los tiempos de espera pueden ser largos. Rogamos que disculpe las molestias que esto pudiera ocasionarle.';
+			break;
+		case 'de':
+			title = 'Wichtige Information';
+			p1 = 'Aufgrund der aktuellen globalen Situation im Hinblick auf COVID-19 könnten alle zurückgegebenen B&O Produkte vorsorglich für 14 Tage unter Quarantäne gestellt.';
+			p2 = 'Daher ist mit einer längeren Bearbeitungszeit zu rechnen. Für die entstehenden Unannehmlichkeiten bitten wir um Entschuldigung.';
+			break;
+	}
+
+	var titleNode = document.getElementById('c-modal-title');
+	var p1Node = document.getElementById('c-modal-p1');
+	var p2Node = document.getElementById('c-modal-p2');
+	var modalBody = document.getElementById('c_modal-message');
+	var modalOverlay = document.getElementById('c_modal_overlay');
+	var styles = document.getElementById('c_modal_styles');
+
+	var onClickHandler = function(e) {
+		if (e.target == modalOverlay) {
+			removeModal();
+		}
+	};
+
+	var removeModal = function() {
+		modalOverlay.style.display = 'none';
+		document.body.style.height = 'auto';
+		document.body.style.overflow = 'auto';
+		modalOverlay.remove();
+		styles.remove();
+		modalBody.remove();
+		window.removeEventListener('click', onClickHandler, false);
+	};
+
+	window.addEventListener('click', onClickHandler, false);
+
+
+	titleNode.innerText = title;
+	p1Node.innerText = p1;
+	p2Node.innerText = p2;
+	document.body.style.height = '100%';
+	document.body.style.overflow = 'hidden';
+	modalOverlay.style.display = 'block';
+</script>
+
+
+</body>
+</html>
