@@ -15,7 +15,7 @@
 </script><noscript><iframe src="//bang-olufsen.containers.piwik.pro/aed3b488-cf61-4b0d-b0fe-3f9c2d2fc621/noscript.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Lorem impsum</p>
 <button id="ppms_consent_link">Privacy settings</button>
-<div id="ppms_consent-fields1">
+<div id="ppms_consent-fields1" style="display: none;">
 	<div id="ppms_consent_container">
 
 		<div id="ppms_consent_error">
@@ -192,17 +192,18 @@
 	}
 
 	.c_modal-content h3 {
-		font-size: 30px;
+		font-size: 38px;
 		color: #000000;
 		line-height: 1;
-		margin: 0 0 32px;
+		margin: 0 0 26px;
 		letter-spacing: 0.4px;
-		font-weight: normal;
+		font-weight: 500;
 	}
 
 	.c_modal-content p {
-		font-size: 16px;
-		color: #737373;
+		font-size: 22px;
+		color: #000;
+		line-height: 1;
 	}
 
 	.c_modal-cta .c_modal-primaryCTA {
@@ -262,26 +263,55 @@
 		flex-direction: row;
 		align-items: stretch;
 		justify-content: space-evenly;
-		background-color: grey;
+		background-color: #F6F6F6;
+		margin-top: 10px;
+	}
+
+	#toggle-details {
+		display: block;
+		text-align: center;
+		color: #000;
+		font-size: 1.3em;
+		margin: 0 0 30px;
 	}
 
 	.c_modal-content td {
-		padding: 2px;
+		padding: 5px;
+		vertical-align: text-top;
+		font-size: 20px;
+	}
+
+	td.consent-types-names {
+		font-weight: 700;
+		white-space: nowrap;
 	}
 
 	.consent-type {
 		flex-grow: 1;
+		flex-basis: 0;
 		text-align: center;
 		padding: 15px;
+		border-right: 1px solid #D0D0D0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
+
+	.consent-type:last-child {
+		border-right: none;
+	}
+
 	.consent-type label {
 		display: block;
+		font-weight: 500;
 		padding-bottom: 5px;
+		text-transform: uppercase;
+		font-size: 1.1em;
 	}
 
 	.ppms-cta-button {
 		display: inline-block;
-		font-size: 0.875rem;
+		font-size: 1.2em;
 		min-width: 240px;
 		text-transform: uppercase;
 		font-weight: 500;
@@ -289,7 +319,7 @@
 		line-height: 1.15;
 		cursor: pointer;
 		color: rgb(0, 0, 0);
-		padding: 10px 20px;
+		padding: 15px 25px;
 		text-decoration: none;
 		border-width: 2px;
 		border-style: solid;
@@ -300,61 +330,206 @@
 	}
 
 	.ppms-cta-button.-green {
-		background-color: green;
+		background-color: #1B771B;
 		color: #fff;
 		border-color: transparent;
+	}
+
+	.ppms-checkboxes {
+		display: flex;
+		justify-content: center;
+		position: relative;
+	}
+
+	.ppms-checkbox {
+		z-index: 1;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.ppms-checkbox-toggle {
+		display: none;
+		background: #aaa;
+		width: 65px;
+		height: 40px;
+		border-radius: 100px;
+		position: relative;
+		cursor: pointer;
+		transition: .3s ease;
+	}
+
+	.ppms-checkbox-toggle:before {
+		transition: .3s ease;
+		content: '';
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		background: #fff;
+		left: 5px;
+		top: 5px;
+		box-sizing: border-box;
+		color: #333;
+		border-radius: 100px;
+	}
+
+	.ppms-checkboxes input[type=checkbox]:checked + .ppms-checkbox-toggle {
+		background: #1B771B;
+	}
+
+	.ppms-checkboxes input[type=checkbox]:disabled + .ppms-checkbox-toggle {
+		opacity: .3;
+	}
+
+	.ppms-checkboxes input[type=checkbox]:checked + .ppms-checkbox-toggle:before {
+		left: 30px;
+		background: #fff;
+	}
+
+	@media (max-width:48rem) {
+		.c_modal-content {
+			padding: 20px 20px 0;
+		}
+
+		.c_modal-content h3 {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+
+		.c_modal-content p {
+			font-size: 18px;
+		}
+
+		.c_modal-buttons {
+			padding: 20px 20px 0;
+			flex-direction: column;
+		}
+
+		.ppms-cta-button {
+			font-size: 1em;
+		}
+
+		.ppms-cta-button:last-child {
+			margin-top: 20px;
+		}
+
+		#toggle-details {
+			font-size: 1.1em;
+		}
+
+		.c_modal-content tr {
+			display: block;
+		}
+
+		.c_modal-content td {
+			font-size: 18px;
+			display: block;
+		}
+
+		.ppms_consent-fields {
+			flex-wrap: wrap;
+		}
+
+		.consent-type {
+			border-right: none;
+			border-bottom: 1px solid #D0D0D0;
+		}
+
+		.ppms-checkbox {
+			opacity: 0 !important;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.ppms-checkbox-toggle {
+			display: block;
+		}
 	}
 </style>
 <div id="c_modal_overlay"></div>
 <div id="c_modal-message" class="c_modal c_modal-medium">
 	<div class="c_modal-content">
-		<h3 id="c-modal-title">Important information!</h3>
-		<p id="c-modal-p1">Due to the current global situation of COVID-19 all returned B&O products will be put in a quarantine for 14 days as a precaution.</p>
-		<p id="c-modal-p2">Therefore extended process time should be expected. We apologise for the inconvenience this might cause.</p>
+		<h3 id="c-modal-title">This website uses cookies</h3>
+		<p id="c-modal-p1">Click to agree and allow us to improve and personalize your experience on our website. You can change your mind at anytime.</p>
 	</div>
 	<div class="c_modal-buttons">
-		<button class="ppms-cta-button -green" id="agree-to-all">Agree to all</button>
-		<button class="ppms-cta-button" id="reject-all">Reject all</button>
+		<button class="ppms-cta-button" id="reject-all">Only required cookies</button>
+		<button class="ppms-cta-button -green" id="agree-to-all">Accept all</button>
 	</div>
 	<div class="c_modal-content">
-		<a href="">Show details</a>
-		<table>
-			<tr><td class="details-collapser">^</td><td class="consent-types-names">Analytics</td><td class="consent-description">We will collect aggregated data about visitors and their experiences on our website. We use this data to fix bugs and make our website better for everyone.</td></tr>
-			<tr><td class="details-collapser">^</td><td class="consent-types-names">A/B testing</td><td class="consent-description">We will set a cookie in your browser to ensure consistency of A/B tests. We use A/B tests, small changes shown to different visitor groups, to make our website better. The same cookie is used to show content relevant to each visitor.</td></tr>
-			<tr><td class="details-collapser">^</td><td class="consent-types-names">Conversion Tracking</td><td class="consent-description">We will store data about when you complete certain actions on our website to understand better how you use it. We use this data to improve your experience with our site.</td></tr>
-			<tr><td class="details-collapser">^</td><td class="consent-types-names">Marketing Automation</td><td class="consent-description">We will store data to create marketing campaigns for certain groups of visitors.</td></tr>
-			<tr><td class="details-collapser">^</td><td class="consent-types-names">Remarketing</td><td class="consent-description">We will set a cookie in your browser to show our advertisements, and only ours, on other websites.</td></tr>
+		<a href="" id="toggle-details">Show details</a>
+		<table id="consent-types-details" style="display: none">
+			<tr><td class="consent-types-names">Analytics</td><td class="consent-description">We will collect aggregated data about visitors and their experiences on our website. We use this data to fix bugs and make our website better for everyone.</td></tr>
+			<tr><td class="consent-types-names">A/B testing</td><td class="consent-description">We will set a cookie in your browser to ensure consistency of A/B tests. We use A/B tests, small changes shown to different visitor groups, to make our website better. The same cookie is used to show content relevant to each visitor.</td></tr>
+			<tr><td class="consent-types-names">Conversion Tracking</td><td class="consent-description">We will store data about when you complete certain actions on our website to understand better how you use it. We use this data to improve your experience with our site.</td></tr>
+			<tr><td class="consent-types-names">Marketing Automation</td><td class="consent-description">We will store data to create marketing campaigns for certain groups of visitors.</td></tr>
+			<tr><td class="consent-types-names">Remarketing</td><td class="consent-description">We will set a cookie in your browser to show our advertisements, and only ours, on other websites.</td></tr>
 		</table>
 	</div>
 	<div class="ppms_consent-fields">
 		<div class="consent-type">
+			<label for="required">Required</label>
+			<div class="ppms-checkboxes-container" id="switch-cookie_cat_necessary">
+				<div class="ppms-checkboxes">
+					<input class="ppms-checkbox" type="checkbox" name="requried" id="required" checked disabled />
+					<div aria-label="toggle-for-Nødvendige" class="ppms-checkbox-toggle"></div>
+				</div>
+			</div>
+		</div>
+		<div class="consent-type">
 			<label for="analytics">Analytics</label>
-			<input type="checkbox" name="analytics" id="analytics" />
+			<div class="ppms-checkboxes-container" id="switch-cookie_cat_necessary">
+				<div class="ppms-checkboxes">
+					<input class="ppms-checkbox" type="checkbox" name="analytics" id="analytics" />
+					<div aria-label="toggle-for-Nødvendige" class="ppms-checkbox-toggle"></div>
+				</div>
+			</div>
 		</div>
 		<div class="consent-type">
 			<label for="ab_testing_and_personalization">A/B Testing</label>
-			<input type="checkbox" name="ab_testing_and_personalization" id="ab_testing_and_personalization" />
+
+			<div class="ppms-checkboxes-container" id="switch-cookie_cat_necessary">
+				<div class="ppms-checkboxes">
+					<input class="ppms-checkbox" type="checkbox" name="ab_testing_and_personalization" id="ab_testing_and_personalization" />
+					<div aria-label="toggle-for-Nødvendige" class="ppms-checkbox-toggle"></div>
+				</div>
+			</div>
 		</div>
 		<div class="consent-type">
 			<label for="conversion_tracking">Conversion tracking</label>
-			<input type="checkbox" name="conversion_tracking" id="conversion_tracking" />
+			<div class="ppms-checkboxes-container" id="switch-cookie_cat_necessary">
+				<div class="ppms-checkboxes">
+					<input class="ppms-checkbox" type="checkbox" name="conversion_tracking" id="conversion_tracking" />
+					<div aria-label="toggle-for-Nødvendige" class="ppms-checkbox-toggle"></div>
+				</div>
+			</div>
 		</div>
 		<div class="consent-type">
 			<label for="marketing_automation">Marketing Automation</label>
-			<input type="checkbox" name="marketing_automation" id="marketing_automation" />
+			<div class="ppms-checkboxes-container" id="switch-cookie_cat_necessary">
+				<div class="ppms-checkboxes">
+					<input class="ppms-checkbox" type="checkbox" name="marketing_automation" id="marketing_automation" />
+					<div aria-label="toggle-for-Nødvendige" class="ppms-checkbox-toggle"></div>
+				</div>
+			</div>
 		</div>
 		<div class="consent-type">
 			<label for="remarketing">Remarketing</label>
-			<input type="checkbox" name="remarketing" id="remarketing" />
+			<div class="ppms-checkboxes-container" id="switch-cookie_cat_necessary">
+				<div class="ppms-checkboxes">
+					<input class="ppms-checkbox" type="checkbox" name="remarketing" id="remarketing" />
+					<div aria-label="toggle-for-Nødvendige" class="ppms-checkbox-toggle"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 <div id="c_modal-backdrop" style="display: none;"></div>
 <script type="application/javascript">
 	var locale = 'en';
-	var title = 'Important information';
-	var p1 = 'Due to the current global situation of COVID-19 all returned B&O products could be put in a quarantine for 14 days as a precaution.';
-	var p2 = 'Therefore extended process time should be expected. We apologise for the inconvenience this might cause.';
+	var title = 'This website uses cookies';
+	var p1 = 'Click to agree and allow us to improve and personalize your experience on our website. You can change your mind at anytime.';
+	var p2 = '';
 	switch (locale) {
 		case 'da':
 			title = 'Vigtig information';
@@ -389,12 +564,25 @@
 	var modalBody = document.getElementById('c_modal-message');
 	var modalOverlay = document.getElementById('c_modal_overlay');
 	var styles = document.getElementById('c_modal_styles');
+	var toggleDetails = document.getElementById('toggle-details');
+	var rejectAllButton = document.getElementById('reject-all');
+	var acceptAllButton = document.getElementById('agree-to-all');
+	var consentDetails = document.getElementById('consent-types-details');
 
-	var onClickHandler = function(e) {
-		if (e.target == modalOverlay) {
-			removeModal();
-		}
-	};
+	rejectAllButton.addEventListener('click', function () {
+		removeModal();
+	});
+
+	acceptAllButton.addEventListener('click', function () {
+		removeModal();
+	});
+
+	toggleDetails.addEventListener('click', function (e) {
+		e.preventDefault();
+		consentDetails.style.display = consentDetails.style.display === 'none' ? 'table' : 'none';
+	});
+
+
 
 	var removeModal = function() {
 		modalOverlay.style.display = 'none';
@@ -406,12 +594,9 @@
 		window.removeEventListener('click', onClickHandler, false);
 	};
 
-	window.addEventListener('click', onClickHandler, false);
-
-
 	titleNode.innerText = title;
 	p1Node.innerText = p1;
-	p2Node.innerText = p2;
+	// p2Node.innerText = p2;
 	document.body.style.height = '100%';
 	document.body.style.overflow = 'hidden';
 	modalOverlay.style.display = 'block';
